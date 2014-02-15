@@ -4,8 +4,8 @@
 	<!-- Note: now compiles two separate jars- one for python mode, and one that's a wrapper for the processing core that can run python files -->
 
 	<!-- You'll want to change these to compile. -->
-	<property name="processing.base" 		location="/home/james/dev/processing-2.1.1" /> 	<!-- The directory that you unpacked Processing into. -->
-	<property name="processing.sketchfolder" 	location="/home/james/dev/sketchbook" />										<!-- Your sketchbook folder. -->
+	<property name="processing.base" 		location="/Applications/Processing.app/Contents/Java/" /> 	<!-- The directory that you unpacked Processing into. -->
+	<property name="processing.sketchfolder" 	location="/Users/marco/Documents/Processing" /><!-- Your sketchbook folder. -->
 	<property name="java.target.bootclasspath"	location="/usr/lib/jvm/java-6-oracle/jre/lib/rt.jar" />		<!-- If you're using a newer jdk -->
 
 	<!-- Leave these be. -->
@@ -31,7 +31,7 @@
 			<include name="*.jar" />
 		</fileset>
 
-		<fileset dir="${processing.base}/lib/" > <!-- pde and ant -->
+		<fileset dir="${processing.base}" > <!-- pde and ant -->
 			<include name="*.jar" />
 		</fileset>
 
@@ -61,7 +61,7 @@
 			skipexisting="true"
 			verbose="true" /> <!-- download latest ANTLR runtime (to include with the mode) -->
 		<get
-			src="http://antlr4.org/download/antlr-4.1-complete.jar"
+			src="https://github.com/antlr/website-antlr4/blob/gh-pages/download/antlr-4.1-complete.jar?raw=true"
 			dest="tool/antlr-4.1-complete.jar"
 			skipexisting="true"
 			verbose="true" /> <!-- download latest ANTLR compiler (to compile our grammars; not included) -->
