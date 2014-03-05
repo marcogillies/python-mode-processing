@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="ProcessingPythonMode" default="release" basedir="./">
+<project name="ProcessingPythonMode" default="install" basedir="./">
 	<!-- Based on mode template http://github.com/martinleopold/TemplateMode -->
 	<!-- Note: now compiles two separate jars- one for python mode, and one that's a wrapper for the processing core that can run python files -->
 

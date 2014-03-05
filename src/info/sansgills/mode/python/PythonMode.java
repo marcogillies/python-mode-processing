@@ -3,6 +3,7 @@ package info.sansgills.mode.python;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
+import java.io.*;
 
 import processing.app.*;
 import processing.mode.java.JavaMode;
@@ -18,6 +19,16 @@ public class PythonMode extends Mode {
 
 	public PythonMode(Base base, File folder) {
 		super(base, folder);
+		tokenMarker = new PythonKeywords();
+
+		try {
+	      for (File file : getKeywordFiles()) {
+	        loadKeywords(file);
+	      }
+	    } catch (IOException e) {
+	      Base.showWarning("Problem loading keywords",
+	                       "Could not load keywords file for " + getTitle() + " mode.", e);
+	    }
 	}
 
 	/**

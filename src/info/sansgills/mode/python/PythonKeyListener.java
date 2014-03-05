@@ -79,7 +79,7 @@ public class PythonKeyListener extends processing.mode.java.PdeKeyListener {
 		case 13: //also return
 			String text = ptextarea.getText();	//text
 			int cursor = ptextarea.getCaretPosition();	//location of element to be placed; may be out of bounds
-
+			System.out.println(text + " " + cursor);
 			ptextarea.setSelectedText(getIndent(cursor, text));
 			break;
 		}
@@ -91,6 +91,7 @@ public class PythonKeyListener extends processing.mode.java.PdeKeyListener {
 	private static Pattern incIndent = Pattern.compile(":( |\\t)*(#.*)?$"); //TODO fix; breaks on strings (":#"\n) and so on
 
 	String getIndent(int cursor, String text) {
+		System.out.println("getindent");
 		if (cursor <= 1) return "\n";
 
 		int lineStart, lineEnd;
